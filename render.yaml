@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: movie-recommendation-mcp
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m app.server
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: TMDB_API_KEY
+        sync: false
